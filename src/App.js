@@ -2,7 +2,13 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  return <div className="App">Pratice Git</div>;
+  function handleSubmit() {
+    alert("Hello")
+  }
+  return <div className="App">Pratice Git
+
+    <button onClick={handleSubmit}>Cuong</button>
+  </div>
 }
 
 export default App;

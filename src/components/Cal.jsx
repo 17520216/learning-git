@@ -54,60 +54,70 @@ export default function Calculators() {
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={1}
           />
           <input
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={2}
           />
           <input
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={3}
           />
           <input
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={4}
           />
           <input
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={5}
           />
           <input
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={6}
           />
           <input
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={7}
           />
           <input
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={8}
           />
           <input
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={9}
           />
           <input
             onClick={getValue}
             style={style.input}
             type="submit"
+            className="input-custom"
             value={0}
           />
           <input

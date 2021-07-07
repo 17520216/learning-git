@@ -1,17 +1,9 @@
 import { useState } from "react";
 const style = {
-  container: {
-    padding: "40px 100px",
-  },
   label: {
     marginRight: "30px",
   },
-  input: {
-    width: "40px",
-    background: "#97cdff",
-    margin: "10px 20px",
-    textAlign: "center",
-  },
+
 };
 export default function Calculators() {
   let [state, setState] = useState("0");
@@ -44,102 +36,111 @@ export default function Calculators() {
   return (
     <>
       <h2>Calculators</h2>
+      <section className='cal'>
 
-      <div style={style.container}>
-        <label style={style.label}>KET QUA</label>
-        <input style={{ width: "200px" }} type="text" value={state} />
+        <div className="container" style={style.container}>
+          <input className='cal-result' type="text" value={state} />
+          <label >Result</label>
 
-        <div style={{ maxWidth: "300px", marginLeft: "76px" }}>
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={1}
-          />
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={2}
-          />
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={3}
-          />
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={4}
-          />
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={5}
-          />
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={6}
-          />
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={7}
-          />
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={8}
-          />
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={9}
-          />
-          <input
-            onClick={getValue}
-            style={style.input}
-            type="submit"
-            className="input-custom"
-            value={0}
-          />
-          <input
-            style={{ ...style.input, background: "#FE20B2" }}
-            text="text"
-            value="+"
-            onClick={getValue}
-          />
-          <input
-            style={{ ...style.input, background: "#FE20B2" }}
-            text="text"
-            value="-"
-            onClick={getValue}
-          />
-          <input
-            style={{ ...style.input, background: "#FE20B2" }}
-            text="number"
-            value="="
-            onClick={run}
-          />
+          <div className='cal-wrap' >
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input1"
+              value={1}
+            />
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input2"
+              value={2}
+            />
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input3"
+              value={3}
+            />
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input4"
+              value={4}
+            />
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input5"
+              value={5}
+            />
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input6"
+              value={6}
+            />
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input7"
+              value={7}
+            />
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input8"
+              value={8}
+            />
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input9"
+              value={9}
+            />
+            <input
+              onClick={getValue}
+              type="submit"
+              className="input-custom input0"
+              value={0}
+            />
+            <input
+              type="submit"
+              className="input-custom input-maths input-plus"
+
+              value="+"
+              onClick={getValue}
+            />
+            <input
+              type="submit"
+              className="input-custom input-maths input-minus"
+
+              value="-"
+              onClick={getValue}
+            />
+            <input
+              type="submit"
+              className="input-custom input-maths input-equal"
+              value="="
+              onClick={run}
+            />
+            <input
+              type="submit"
+              className="input-custom input-maths input-multiply"
+              value="*"
+            />
+            <input
+              type="submit"
+              className="input-custom input-maths input-division"
+              value="/"
+            />
+            <input
+              type="submit"
+              className="input-custom  input-maths input-remove"
+              value="C"
+            />
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from "react-router-dom";
 import Cal from "./components/Cal";
 import Sort from "./components/Sort";
 import Find from "./components/Find";
@@ -10,16 +10,16 @@ function App() {
       <div className="App">Learning Js</div>
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/cal">Cal</Link>
+          <nav className='wrap'>
+            <ul className='tabs'>
+              <li className='tab-content'>
+                <NavLink to="/cal">Cal</NavLink>
               </li>
-              <li>
-                <Link to="/sort">Sort</Link>
+              <li className='tab-content'>
+                <NavLink to="/sort">Sort</NavLink>
               </li>
-              <li>
-                <Link to="/find">Find</Link>
+              <li className='tab-content'>
+                <NavLink to="/find">Find</NavLink>
               </li>
             </ul>
           </nav>

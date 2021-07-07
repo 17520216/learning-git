@@ -48,31 +48,34 @@ export default function Sort() {
   return (
     <>
       <h2>Sort program</h2>
-      <div style={{ padding: "40px 100px" }}>
-        <div className="Box" id="box" ref={ref}>
-          {state.list.length === 0
-            ? null
-            : state.list.map((e) => (
-                <input className="input" type="number" value={e} />
+      <section className='sort'>
+        <div className='container'>
+          <div className="Box" id="box" ref={ref}>
+            {state.list.length === 0
+              ? null
+              : state.list.map((e) => (
+                <input className="input" type="submit" value={e} />
               ))}
+          </div>
+          <div className="form">
+            {[...Array(20)].map((value) => (
+              <input
+                className="input"
+                type="submit"
+                value={random()}
+                onClick={(e) => log(e.target.value)}
+              />
+            ))}
+          </div>
+          <button className="btn" onClick={sort}>
+            SORT
+          </button>
+          <button className="btn" onClick={reset}>
+            RESET
+          </button>
         </div>
-        <div className="form">
-          {[...Array(20)].map((value) => (
-            <input
-              className="input"
-              type="number"
-              value={random()}
-              onClick={(e) => log(e.target.value)}
-            />
-          ))}
-        </div>
-        <button className="btn" onClick={sort}>
-          SORT
-        </button>
-        <button className="btn" onClick={reset}>
-          RESET
-        </button>
-      </div>
+      </section>
     </>
+
   );
 }

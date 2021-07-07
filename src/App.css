@@ -1,5 +1,45 @@
 .App {
   text-align: center;
+  color: #007bff;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+  font-size: 50px;
+}
+.wrap {
+  min-width: 300px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+.wrap .tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+
+  text-align: center;
+}
+.wrap .tabs .tab-content {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  list-style: none;
+  background: rgba(42, 50, 113, 0.28);
+}
+.wrap .tabs .tab-content a {
+  padding: 0 50px;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrap .tabs .tab-content .active {
+  background: #201e40;
+  border-radius: 5px;
+}
+.wrap .tabs li:hover {
+  background: #201e40;
 }
 
 .App-logo {

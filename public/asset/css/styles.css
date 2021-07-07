@@ -1,0 +1,131 @@
+/*cal*/
+.cal,
+.sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+.cal .container,
+.sort .container {
+    position: relative;
+    width: 600px;
+}
+.cal .container .cal-result,
+.sort .container .Box {
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 2px solid #201e40;
+    border-radius: 5px;
+    width: 98%;
+    height: 70px;
+    padding: 0 20px;
+    outline: none;
+    text-align: right;
+    margin: 0 6px;
+}
+.cal .container .cal-result:focus {
+    /* color: #007bff; */
+    border-color: #201e40 !important;
+}
+.cal .container label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    text-align: center;
+    height: 40px;
+    width: 120px;
+    margin-left: 40px;
+    background-color: #201e40;
+    color: #007bff;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+.cal .container .cal-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+}
+.cal .container .cal-wrap .input-custom,
+.sort .container .form .input,
+.sort .container .btn {
+    background-color: #201e40;
+    color: #007bff;
+    outline: none;
+    border-radius: 5px;
+    width: 90%;
+    height: 60px;
+    /* border: 1px solid #b3cde0; */
+    box-shadow: 4px 4px 0px #121212;
+    margin-top: 10px;
+    margin-left: 5px;
+    text-align: center;
+}
+.cal .container .cal-wrap .input-custom:hover,
+.sort .container .form .input:hover,
+.sort .container .btn:hover {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+.cal .container .cal-wrap .input4 {
+    grid-area: 2/1/3/2;
+}
+.cal .container .cal-wrap .input5 {
+    grid-area: 2/2/3/3;
+}
+.cal .container .cal-wrap .input6 {
+    grid-area: 2/3/3/4;
+}
+.cal .container .cal-wrap .input7 {
+    grid-area: 3/1/4/2;
+}
+.cal .container .cal-wrap .input8 {
+    grid-area: 3/2/4/3;
+}
+.cal .container .cal-wrap .input9 {
+    grid-area: 3/3/4/4;
+}
+.cal .container .cal-wrap .input0 {
+    grid-area: 4/2/5/3;
+}
+.cal .container .cal-wrap .input-equal {
+    grid-area: 4/3/5/4;
+}
+.cal .container .cal-wrap .input-remove {
+    grid-area: 4/1/5/2;
+}
+.cal .container .cal-wrap .input-maths,
+.sort .container .btn {
+    background-color: #8363a1;
+    color: #343a40;
+    font-weight: bold;
+}
+/*sort*/
+.sort .container .form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+}
+.sort .container .Box {
+    height: 100px !important;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-flow: row wrap;
+    overflow: hidden;
+}
+.sort .container .Box .input {
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 3px solid #007bff;
+    border-radius: 50%;
+    outline: none;
+    text-align: center;
+}
+
+.btn {
+    width: 48% !important;
+    margin-left: 2px;
+}

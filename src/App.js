@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Cal from "./components/Cal";
 import Sort from "./components/Sort";
 import Find from "./components/Find";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
       <div className="App">Learning Js</div>
+      <Header />
       <Router>
         <div>
           <nav>

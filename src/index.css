@@ -52,3 +52,16 @@ input[type="number"] {
   box-shadow: 4px 4px 0px #121212;
   margin: 20px;
 }
+header {
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header a {
+  font-size: 30px;
+  color: black;
+}
+/* a:hover {
+  text-decoration: none;
+} */

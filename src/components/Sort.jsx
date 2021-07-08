@@ -1,6 +1,8 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { gsap } from "gsap";
 
 export default function Sort() {
+  let sortRef = useRef();
   let [state, setState] = useState({
     render: true,
     list: [],
@@ -39,6 +41,10 @@ export default function Sort() {
     });
   };
 
+  useEffect(() => {
+    gsap.from(sortRef.current, { y: 100, duration: 0.6, opacity: 0 });
+  }, []);
+
   function reset() {
     setState({
       render: !state.render,
@@ -48,14 +54,14 @@ export default function Sort() {
   return (
     <>
       <h2>Sort program</h2>
-      <section className='sort'>
-        <div className='container'>
+      <section className="sort" ref={sortRef}>
+        <div className="container">
           <div className="Box" id="box" ref={ref}>
             {state.list.length === 0
               ? null
               : state.list.map((e) => (
-                <input className="input" type="submit" value={e} />
-              ))}
+                  <input className="input" type="submit" value={e} />
+                ))}
           </div>
           <div className="form">
             {[...Array(20)].map((value) => (
@@ -76,6 +82,5 @@ export default function Sort() {
         </div>
       </section>
     </>
-
   );
 }

@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { gsap, TimelineLite } from "gsap";
 const style = {
   label: {
     marginRight: "30px",
   },
-
 };
 export default function Calculators() {
   let [state, setState] = useState("0");
+  let calRef = useRef();
 
   const cal = (prev, next, status) => {
     if (status === "+") {
@@ -25,24 +26,23 @@ export default function Calculators() {
     setState(state.concat(value));
   };
 
-  //   const handle = (sign) => {
-  //     let str = state.toString() + ` ${sign} `;
-  //     setState(str);
-  //   };
   function run() {
     setState(eval(state).toString());
   }
 
+  useEffect(() => {
+    gsap.from(calRef.current, { y: 100, duration: 0.6, opacity: 0 });
+  }, []);
+
   return (
     <>
       <h2>Calculators</h2>
-      <section className='cal'>
-
+      <section className="cal" ref={calRef}>
         <div className="container" style={style.container}>
-          <input className='cal-result' type="text" value={state} />
-          <label >Result</label>
+          <input className="cal-result" type="text" value={state} />
+          <label>Result</label>
 
-          <div className='cal-wrap' >
+          <div className="cal-wrap">
             <input
               onClick={getValue}
               type="submit"
@@ -106,14 +106,12 @@ export default function Calculators() {
             <input
               type="submit"
               className="input-custom input-maths input-plus"
-
               value="+"
               onClick={getValue}
             />
             <input
               type="submit"
               className="input-custom input-maths input-minus"
-
               value="-"
               onClick={getValue}
             />

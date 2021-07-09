@@ -1,18 +1,21 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "antd/dist/antd.min.css";
+import "./global.scss";
 import Cal from "./components/Cal";
 import Sort from "./components/Sort";
 import Find from "./components/Find";
 import Header from "./components/Header";
+import ContentPage from "./components/ContentPage";
 
 function App() {
   return (
     <>
-      <div className="App">Learning Js</div>
       <Header />
+      <ContentPage />
       <Router>
         <div>
-          <nav>
+          {/* <nav>
             <ul>
               <li>
                 <Link to="/cal">Cal</Link>
@@ -24,7 +27,7 @@ function App() {
                 <Link to="/find">Find</Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
 
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}

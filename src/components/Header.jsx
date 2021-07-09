@@ -1,10 +1,6 @@
 import { Menu, Dropdown, Button } from "antd";
 import React from "react";
-import {
-  MailOutlined,
-  AppstoreOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
+
 import { useState } from "react";
 import Container from "./Container";
 
@@ -123,28 +119,44 @@ export default function Header() {
   };
 
   return (
-    <Container>
-      <header>
-        {data
-          ? data.menu.map((value, index) => {
-              if (value.children) {
-                return (
-                  <Dropdown overlay={renderMultiMenu(value.children)}>
+    <>
+      <header className="head">
+        <div className="topHeader">
+          <Container width={"1366px"}>
+            <div className="contentTopH">
+              <h5>The Outstanding Production Group</h5>
+              <h3>
+                <span>EN</span>
+                <span>|</span>
+                <span>VN</span>
+              </h3>
+            </div>
+          </Container>
+        </div>
+      </header>
+      <Container>
+        <header>
+          {data
+            ? data.menu.map((value, index) => {
+                if (value.children) {
+                  return (
+                    <Dropdown overlay={renderMultiMenu(value.children)}>
+                      <a key={index} href={value.link}>
+                        {value.name}
+                      </a>
+                    </Dropdown>
+                  );
+                } else {
+                  return (
                     <a key={index} href={value.link}>
                       {value.name}
                     </a>
-                  </Dropdown>
-                );
-              } else {
-                return (
-                  <a key={index} href={value.link}>
-                    {value.name}
-                  </a>
-                );
-              }
-            })
-          : ""}
-      </header>
-    </Container>
+                  );
+                }
+              })
+            : ""}
+        </header>
+      </Container>
+    </>
   );
 }

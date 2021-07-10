@@ -139,6 +139,14 @@ export default function Calculators() {
           </div>
         </div>
       </section>
+      <div className="text" >
+        text
+      </div>
+      {/* <style jsx>
+        {`
+        .text{background: red}
+        `}
+      </style> */}
     </>
   );
 }

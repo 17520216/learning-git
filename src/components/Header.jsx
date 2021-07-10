@@ -1,5 +1,8 @@
-import { Menu, Dropdown, Button } from "antd";
-import React from "react";
+import { Menu, Dropdown, Switch } from "antd";
+import React, { useContext } from "react";
+import { Context } from "../context/useContextHome";
+import logo from "../images/logo.svg";
+import logo1 from "../images/logo2.png";
 
 import { useState } from "react";
 import Container from "./Container";
@@ -11,72 +14,72 @@ const data = {
         {
           children: [
             {
-              classActive: "services",
+              classActive: "Course",
               link: "/",
-              name: "Digital services",
-              slug: "services",
+              name: "Web Responsive",
+              slug: "Course",
             },
             {
-              classActive: "services",
+              classActive: "Course",
               link: "/",
-              name: "Event services",
-              slug: "services",
+              name: "ReactJs",
+              slug: "Course",
             },
           ],
-          classActive: "services",
+          classActive: "Course",
           link: "/",
-          name: "Digital services",
-          slug: "services",
+          name: "Web Responsive",
+          slug: "Course",
         },
         {
-          classActive: "services",
+          classActive: "Course",
           link: "/",
-          name: "Event services",
-          slug: "services",
+          name: "ReactJs",
+          slug: "Course",
         },
         {
           children: [
             {
-              classActive: "services",
+              classActive: "Course",
               link: "/",
-              name: "Digital services",
-              slug: "services",
+              name: "Web Responsive",
+              slug: "Course",
             },
             {
-              classActive: "services",
+              classActive: "Course",
               link: "/",
-              name: "Event services",
-              slug: "services",
+              name: "ReactJs",
+              slug: "Course",
             },
           ],
-          classActive: "services",
+          classActive: "Course",
           link: "/",
-          name: "Other services",
-          slug: "services",
+          name: "Other Course",
+          slug: "Course",
         },
       ],
-      classActive: "services",
-      link: "/services",
-      name: "Services",
-      slug: "services",
+      classActive: "Course",
+      link: "/Course",
+      name: "Course",
+      slug: "Course",
     },
     {
-      classActive: "case-studies",
-      link: "/case-studies",
-      name: "Case studies",
-      slug: "case-studies",
+      classActive: "Home",
+      link: "/Home",
+      name: "Home",
+      slug: "Home",
     },
     {
-      classActive: "our-lab",
-      link: "/our-lab",
-      name: "Our Lab",
-      slug: "our-lab",
+      classActive: "About",
+      link: "/About",
+      name: "About",
+      slug: "About",
     },
     {
-      classActive: "career",
-      link: "/career",
-      name: "Career",
-      slug: "career",
+      classActive: "cfd-team",
+      link: "/cfd-team",
+      name: "CFD Team",
+      slug: "cfd-team",
     },
     {
       classActive: "contact",
@@ -90,6 +93,8 @@ const data = {
 const { SubMenu } = Menu;
 
 export default function Header() {
+  let { darkMode, dark, lang, setLang } = useContext(Context);
+
   const childrenMenu = (val, ind = 0) => {
     if (val.children && val.children.length > 0) {
       return (
@@ -118,17 +123,31 @@ export default function Header() {
     }
   };
 
+  function onChange() {
+    darkMode();
+  }
+
   return (
-    <>
+    <div className={`${dark ? "dark" : ""}`}>
       <header className="head">
         <div className="topHeader">
           <Container width={"1366px"}>
             <div className="contentTopH">
               <h5>The Outstanding Production Group</h5>
               <h3>
-                <span>EN</span>
+                <span
+                  style={{ color: `${lang === "en" ? "white" : "#7d7d7d"} ` }}
+                  onClick={() => setLang("en")}
+                >
+                  EN
+                </span>
                 <span>|</span>
-                <span>VN</span>
+                <span
+                  onClick={() => setLang("vi")}
+                  style={{ color: `${lang === "vi" ? "white" : "#7d7d7d"} ` }}
+                >
+                  VN
+                </span>
               </h3>
             </div>
           </Container>
@@ -136,6 +155,10 @@ export default function Header() {
       </header>
       <Container>
         <header>
+          <div className="logo">
+            {dark ? <img src={logo1} alt="" /> : <img src={logo} alt="" />}
+          </div>
+
           {data
             ? data.menu.map((value, index) => {
                 if (value.children) {
@@ -155,8 +178,13 @@ export default function Header() {
                 }
               })
             : ""}
+
+          <div className="dark-mode">
+            {/* <span>Dark | Mode</span> */}
+            <Switch onChange={onChange} />
+          </div>
         </header>
       </Container>
-    </>
+    </div>
   );
 }

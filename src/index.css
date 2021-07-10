@@ -59,7 +59,8 @@ header {
   align-items: center;
 }
 header a {
-  font-size: 30px;
+  font-size: 22px;
+
   color: black;
 }
 /* a:hover {

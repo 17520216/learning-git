@@ -14,6 +14,46 @@ $AvenirNextLTProBold: "AvenirNextLTPro-Bold";
 $AvenirNextLTProRegular: "AvenirNextLTPro-Regular";
 $AvenirNextLTProDemi: "AvenirNextLTPro-Demi";
 
+@font-face {
+  font-family: "SVN-AvenirNextBold";
+  src: url("../src/public/fonts/SVN-AvenirNextBold.eot");
+  src: url("../src/public/fonts/SVN-AvenirNextBold.eot")
+      format("embedded-opentype"),
+    url("../src/public/fonts/SVN-AvenirNextBold.woff2") format("woff2"),
+    url("../src/public/fonts/SVN-AvenirNextBold.woff") format("woff"),
+    url("../src/public/fonts/SVN-AvenirNextBold.ttf") format("truetype"),
+    url("../src/public/fonts/SVN-AvenirNextBold.svg#SVN-AvenirNextBold")
+      format("svg");
+}
+
+@font-face {
+  font-family: "AvenirNextLTPro-Bold";
+  src: url("../src/public/fonts/AvenirNextLTPro-Bold.eot");
+  src: url("../src/public/fonts/AvenirNextLTPro-Bold.eot")
+      format("embedded-opentype"),
+    url("../src/public/fonts/AvenirNextLTPro-Bold.woff2") format("woff2"),
+    url("../src/public/fonts/AvenirNextLTPro-Bold.woff") format("woff"),
+    url("../src/public/fonts/AvenirNextLTPro-Bold.ttf") format("truetype"),
+    url("../src/public/fonts/AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold")
+      format("svg");
+}
+@font-face {
+  font-family: "Comfortaa-Light";
+  src: url("../src/public/fonts/Comfortaa-Light.eot");
+  src: url("../src/public/fonts/Comfortaa-Light.eot")
+      format("embedded-opentype"),
+    url("../src/public/fonts/Comfortaa-Light.woff2") format("woff2"),
+    url("../src/public/fonts/Comfortaa-Light.woff") format("woff"),
+    url("../src/public/fonts/Comfortaa-Light.ttf") format("truetype"),
+    url("../src/public/fonts/Comfortaa-Light.svg#Comfortaa-Light") format("svg");
+}
+
+body {
+  font-family: "Comfortaa-Light";
+}
+header {
+  font-family: "SVN-AvenirNextBold";
+}
 .ant-dropdown,
 .ant-dropdown-menu-submenu-popup {
   background: #fff;
@@ -57,7 +97,7 @@ $AvenirNextLTProDemi: "AvenirNextLTPro-Demi";
     color: #fff;
   }
   h3 {
-    font-family: $AvenirNextLTProBold;
+    font-family: "SVN-AvenirNextBold";
     span {
       color: #7d7d7d;
       padding-left: 10px;
@@ -69,7 +109,7 @@ $AvenirNextLTProDemi: "AvenirNextLTPro-Demi";
   span {
     cursor: pointer;
     &:hover {
-      color: $WHITE;
+      color: $WHITE !important;
     }
   }
 }
@@ -119,6 +159,10 @@ section {
 .quote {
   background: rgba(133, 116, 96, 0.1);
   padding-bottom: 80px;
+  &.darkQ {
+    color: #ddd;
+  }
+
   p {
     font-size: 40px;
     text-align: center;
@@ -210,5 +254,37 @@ section {
     line-height: 26px;
     color: #121212;
     margin-bottom: 25px;
+  }
+}
+header {
+  img {
+    max-width: 60px;
+  }
+}
+.ant-switch.ant-switch-checked {
+  background-color: #ddd !important;
+}
+.main {
+  transition: 0.4s;
+  &.dark {
+    transition: 0.4s;
+    background-color: #000;
+  }
+}
+.dark {
+  background-color: #000;
+  h5,
+  h3,
+  a {
+    color: #ddd;
+  }
+  .logo {
+    fill: #ddd;
+  }
+}
+.darkS {
+  color: #ddd;
+  .titleLeft {
+    color: #ddd;
   }
 }

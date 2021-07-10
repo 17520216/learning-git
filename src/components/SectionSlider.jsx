@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import Slider from "react-slick";
 import BannerItem from "./BannerItem";
 import banner1 from "../images/banner-01.png";
 import banner2 from "../images/banner-02.png";
 import iconArrow from "../images/icon-arrow-black.png";
+import { Context } from "../context/useContextHome";
 import Scroll from "./Scroll";
 export default function SectionSlider() {
-  let listSlide = [
+  let listSlideEn = [
     {
       subTop: "EXPERTS SINCE 2013",
-      titleLeft: "T.O.P Group",
+      titleLeft: "C.F.D Team",
       titleRight:
         "is a digital agency for sleek technology and kick-ass design.",
       img: banner1,
@@ -21,7 +22,7 @@ export default function SectionSlider() {
     {
       subTop: "",
       hasTag: "Do you know?",
-      titleLeft: "T.O.P Group",
+      titleLeft: "C.F.D Team",
       titleRight:
         "is a digital agency for sleek technology and kick-ass design.",
       img: banner2,
@@ -34,7 +35,7 @@ export default function SectionSlider() {
     {
       subTop: "",
       hasTag: "Do you know?",
-      titleLeft: "T.O.P Group",
+      titleLeft: "C.F.D Team",
       titleRight:
         "is a digital agency for sleek technology and kick-ass design.",
       img: banner2,
@@ -45,7 +46,42 @@ export default function SectionSlider() {
         "https://www.youtube.com/watch?v=_JSangCM9f4&list=RD_JSangCM9f4&start_radio=1",
     },
   ];
+  let listSlideVi = [
+    {
+      subTop: "Thanh lap tu 2020",
+      titleLeft: "C.F.D Team",
+      titleRight: "La mot cong dong FrontEnd chat luong",
+      img: banner1,
+      description:
+        "Neu ban can tim mot khoa hoc FrontEnd! Hay lien he voi chung toi",
+      video: "https://youtu.be/ea-I4sqgVGY",
+      href: "",
+    },
+    {
+      subTop: "",
+      hasTag: "Ban co biet?",
+      titleLeft: "C.F.D Team",
+      titleRight: "La mot cong dong FrontEnd chat luong",
+      img: banner2,
+      description:
+        "Neu ban can tim mot khoa hoc FrontEnd! Hay lien he voi chung toi",
+
+      href: "",
+      video:
+        "https://www.youtube.com/watch?v=_JSangCM9f4&list=RD_JSangCM9f4&start_radio=1",
+    },
+  ];
   const [slideIndex, setSlideIndex] = useState(0);
+
+  let { dark, lang } = useContext(Context);
+
+  let list = [];
+
+  if (lang === "en") {
+    list = listSlideEn;
+  } else if (lang === "vi") {
+    list = listSlideVi;
+  }
 
   function Next({ onClick }) {
     return (
@@ -70,7 +106,7 @@ export default function SectionSlider() {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -80,9 +116,9 @@ export default function SectionSlider() {
   };
   return (
     <>
-      <section>
+      <section className={`${dark ? "darkS" : ""}`}>
         <Slider {...settings}>
-          {listSlide.map((e, i) => (
+          {list.map((e, i) => (
             <div key={i}>
               <BannerItem {...e} data={e} />
             </div>
@@ -92,7 +128,7 @@ export default function SectionSlider() {
           <p>
             <span className="active">{slideIndex + 1}</span>
             <span>/</span>
-            <span>{listSlide && listSlide.length}</span>
+            <span>{list && list.length}</span>
           </p>
         </div>
         <Scroll />

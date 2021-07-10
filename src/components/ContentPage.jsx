@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "./Header";
 import SectionSlider from "./SectionSlider";
 import Quote from "./Quote";
 import Box from "./Box";
+import { Context } from "../context/useContextHome";
 export default function ContentPage() {
+  let { dark, lang } = useContext(Context);
+
+  let textEn = "Hello World";
+  let textVi = "Chao The Gioi";
+
   return (
-    <>
+    <main className={`main ${dark ? "dark" : ""}`}>
       {/* <Header /> */}
       <SectionSlider />
       <Box />
-      <Quote text="Chất lượng không chỉ là tiêu chuẩn mà nó còn là thái độ của chúng tôi đối với từng sản phẩm" />
-    </>
+      <Quote text={`${lang === "en" ? textEn : textVi}`} />
+      <Quote text={`${lang === "en" ? textEn : textVi}`} />
+      <Quote text={`${lang === "en" ? textEn : textVi}`} />
+      <Quote text={`${lang === "en" ? textEn : textVi}`} />
+    </main>
   );
 }
